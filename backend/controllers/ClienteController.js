@@ -40,5 +40,15 @@ module.exports = class ClienteController {
       clientes: clientes,
     });
   }
-  
+
+  static async deleteAllData(req, res) {
+    try {
+      await Cliente.deleteMany();
+      res
+        .status(200)
+        .json({ message: "Todos os clientes foram deletados com sucesso!" });
+    } catch (error) {
+      res.status(500).json({ message: error });
+    }
+  }
 };
