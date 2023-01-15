@@ -3,18 +3,20 @@ const { Schema } = mongoose;
 
 const Cliente = mongoose.model(
   "Cliente",
-  new Schema({
-    nome: {
-      type: String,
-      required: true,
+  new Schema(
+    {
+      nome: {
+        type: String,
+        required: true,
+      },
+      peso_produto: {
+        type: Number,
+        required: true,
+      },
+      endereco: Object,
     },
-    peso_produto: {
-      type: Number,
-      required: true,
-    },
-    endereco: Object,
-  }),
-  { timestamps: true }
+    { timestamps: true }
+  )
 );
 
 module.exports = Cliente;

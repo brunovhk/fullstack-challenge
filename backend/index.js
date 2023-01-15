@@ -10,5 +10,8 @@ app.use(express.json());
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 
 // Routes
+const ClienteRoutes = require("./routes/ClienteRoutes");
+
+app.use("/clientes", ClienteRoutes);
 
 app.listen(5000);
