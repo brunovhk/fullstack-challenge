@@ -33,5 +33,12 @@ module.exports = class ClienteController {
       res.status(500).json({ message: error });
     }
   }
-  //
+  // Retorno de todos os clientes
+  static async getAll(req, res) {
+    const clientes = await Cliente.find().sort({ nome: "asc" });
+    res.status(200).json({
+      clientes: clientes,
+    });
+  }
+  
 };
