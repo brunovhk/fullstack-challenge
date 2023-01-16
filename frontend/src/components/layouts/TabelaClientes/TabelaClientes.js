@@ -5,7 +5,6 @@ import api from "../../../utils/api";
 
 function TabelaClientes() {
   const [client, setClients] = useState([]);
-  const [clientsMap, setClientsMap] = useState([]);
 
   useEffect(() => {
     try {

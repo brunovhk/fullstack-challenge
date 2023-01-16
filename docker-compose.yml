@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  api:
+    build: ./backend
+    container_name: backend
+    ports:
+      - '5000:5000'
+    volumes:
+      - /backend:/index
+      - /backend/node_modules
+  client:
+    build: ./frontend
+    container_name: clientes_frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend:/App
+      - /node_modules
+    stdin_open: true
+    tty: true
