@@ -1,8 +1,20 @@
 # Fullstack Challenge
 
-## Getting Started
+## Back-end
+cors
+express
+mongoose
+nodemon
 
-Necessário docker instalado.
+## Front-end
+Axios
+React-leaflet
+leaflet
+
+## Iniciando o projeto
+
+Necessário docker e MongoDB.
+
 Clone o projeto e utilize "docker-compose up" na pasta raiz do projeto.
 
 ### Prerequisities
