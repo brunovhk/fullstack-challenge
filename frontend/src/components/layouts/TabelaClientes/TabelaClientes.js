@@ -1,10 +1,11 @@
-import styles from "../layouts/TabelaClientes.module.css";
+import styles from "./TabelaClientes.module.css";
 import { useState, useEffect } from "react";
 // Contexts
-import api from "../../utils/api";
+import api from "../../../utils/api";
 
 function TabelaClientes() {
   const [client, setClients] = useState([]);
+  const [clientsMap, setClientsMap] = useState([]);
 
   useEffect(() => {
     try {
@@ -36,14 +37,12 @@ function TabelaClientes() {
               client.map((cliente) => (
                 <tr key={cliente._id}>
                   <td className={styles.td}>{cliente.nome}</td>
-                  <td className={styles.td}>{cliente.endereco['rua']}</td>
-                  <td className={styles.td}>{cliente.endereco['cidade']}</td>
-                  <td className={styles.td}>{cliente.endereco['pais']}</td>
-                  <td className={styles.td}>
-                    {cliente.peso_produto}
-                  </td>
-                  <td className={styles.td}>{cliente.endereco['lat']}</td>
-                  <td className={styles.td}>{cliente.endereco['lng']}</td>
+                  <td className={styles.td}>{cliente.endereco["rua"]}</td>
+                  <td className={styles.td}>{cliente.endereco["cidade"]}</td>
+                  <td className={styles.td}>{cliente.endereco["pais"]}</td>
+                  <td className={styles.td}>{cliente.peso_produto} KG</td>
+                  <td className={styles.td}>{cliente.endereco["lat"]}</td>
+                  <td className={styles.td}>{cliente.endereco["lng"]}</td>
                 </tr>
               ))}
           </tbody>

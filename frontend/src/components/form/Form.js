@@ -1,4 +1,4 @@
-import Input from "../form/Input";
+import Input from "./Input";
 import styles from "../form/Form.module.css";
 import { useState, useContext, useEffect } from "react";
 // Contexts
@@ -19,7 +19,6 @@ function FormCliente() {
     api.get(`/api/nominatim/search/${e.target.value}`).then((response) => {
       setEndereco(response.data.endereco);
       client.endereco = response.data.enderecos[0];
-      console.log(client.endereco)
       setLat(client.endereco.lat);
       setLng(client.endereco.lon);
     });
