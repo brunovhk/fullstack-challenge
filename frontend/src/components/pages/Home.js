@@ -1,7 +1,15 @@
+import styles from "../form/Form.module.css";
+// Contexts
+import FormCliente from "./Form";
+import TabelaClientes from "../layouts/TabelaClientes";
+import MapClientes from "../layouts/MapClientes";
+
 function Home() {
   return (
-    <section>
-      <h1>Home</h1>
+    <section className={styles.form_container}>
+      <FormCliente />
+      <MapClientes />
+      <TabelaClientes />
     </section>
   );
 }

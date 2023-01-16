@@ -1,0 +1,21 @@
+.tabela {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 45%;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+}
+th{
+    background-color: #eee;
+}
+.p {
+  position: absolute;
+  top: 80%;
+  left: 60%;
+  height: 30%;
+  width: 40%;
+}

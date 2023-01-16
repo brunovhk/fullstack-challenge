@@ -17,11 +17,22 @@ module.exports = class ClienteController {
       res.status(400).json({ message: "O endereco é obrigatório" });
       return;
     }
+    const rua = endereco.address.road;
+    const cidade = endereco.address.city;
+    const pais = endereco.address.country_code;
+    const lat = endereco.lat;
+    const lng = endereco.lon;
     // Salvando cliente no banco
     const cliente = new Cliente({
       nome,
       peso_produto,
-      endereco: {},
+      endereco: {
+        rua,
+        cidade,
+        pais,
+        lat,
+        lng,
+      },
     });
     try {
       const newCliente = await cliente.save();
@@ -40,7 +51,7 @@ module.exports = class ClienteController {
       clientes: clientes,
     });
   }
-
+  // Remove todos os clientes
   static async deleteAllData(req, res) {
     try {
       await Cliente.deleteMany();
