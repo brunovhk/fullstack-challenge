@@ -17,6 +17,8 @@ Necessário Docker.
 
 Clone o projeto e utilize "docker-compose up" na pasta raiz do projeto.
 
+Acesse o projeto pelo link "http://localhost:3000/"
+
 ### Prerequisities
 
 Docker
