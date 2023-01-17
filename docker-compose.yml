@@ -1,18 +1,27 @@
 version: '3.8'
 services:
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    restart: on-failure
+    volumes:
+      - ./data:/data/db
   api:
     build: ./backend
     container_name: backend
     ports:
-      - '5000:5000'
+      - 5000:5000
     volumes:
       - /backend:/index
       - /backend/node_modules
+    depends_on:
+      - mongodb
   client:
     build: ./frontend
     container_name: clientes_frontend
     ports:
-      - '3000:3000'
+      - 3000:3000
     volumes:
       - ./frontend:/App
       - /node_modules
