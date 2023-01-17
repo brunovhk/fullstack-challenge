@@ -13,7 +13,7 @@ leaflet
 
 ## Iniciando o projeto
 
-Necessário docker e MongoDB.
+Necessário Docker.
 
 Clone o projeto e utilize "docker-compose up" na pasta raiz do projeto.
 
